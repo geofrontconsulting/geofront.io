@@ -12,8 +12,6 @@ edit_uri:
     "EDIT_URL",
     "https://github.com/geofrontconsulting/geofront.io/blob/main/docs",
   ]
-# configuration by env https://www.mkdocs.org/user-guide/configuration/#environment-variables
-site_url: !ENV ["SITE_URL", "http://localhost:8000"]
 
 # Copyright
 copyright: Copyright &copy; 2024 <a href="https://geofront.io">GeoFront</a>
