@@ -1,0 +1,139 @@
+site_name: GeoFront
+site_description: GeoFront is the team of experts dedicated to providing innovative Data solutions for your business needs
+
+docs_dir: docs
+site_dir: site
+
+# Repository
+repo_name: geofrontconsulting/geofront.io
+repo_url: https://github.com/geofrontconsulting/geofront.io
+edit_uri:
+  !ENV [
+    "EDIT_URL",
+    "https://github.com/geofrontconsulting/geofront.io/blob/main/docs",
+  ]
+# configuration by env https://www.mkdocs.org/user-guide/configuration/#environment-variables
+site_url: !ENV ["SITE_URL", "http://localhost:8000"]
+
+# Copyright
+copyright: Copyright &copy; 2024 <a href="https://geofront.io">GeoFront</a>
+
+theme:
+  name: material
+  custom_dir: theme_overrides/
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light-green
+      toggle:
+        icon: octicons/moon-24
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: octicons/sun-24
+        name: Switch to light mode
+  logo: assets/images/White logo - no background.svg
+  favicon: assets/images/favicon.svg
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+
+extra:
+  author:
+    name: GeoFront
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/undp-data/geofrontconsulting
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/kipkemoi_geo
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/isaac-kipkemoi-13ba5951
+
+# These extensions are chosen to be a superset of Pandoc's Markdown.
+# This way, I can write in Pandoc's Markdown and have it be supported here.
+# https://pandoc.org/MANUAL.html
+# https://github.com/kylebarron/cogeo-mosaic/blob/mkdocs/mkdocs.yml#L50-L75
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - codehilite:
+      guess_lang: false
+  - def_list
+  - footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret:
+      insert: false
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.escapeall:
+      hardbreak: true
+      nbsp: true
+  - pymdownx.magiclink:
+      hide_protocol: true
+      repo_url_shortener: true
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+
+plugins:
+  - search
+  # https://github.com/timvink/mkdocs-git-authors-plugin
+  - git-authors
+  - caption
+  - git-revision-date-localized:
+      type: datetime
+      fallback_to_build_date: false
+      enable_creation_date: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - About: about/index.md
+  - Services:
+      - services/gis.md
+      - services/data.md
+      - services/environment.md
+      - trainings:
+          - services/trainings/introduction_to_gis.md
+          - services/trainings/advanced_gis.md
+          - services/trainings/introduction_webmapping.md
+  - Contact us: contact/index.md
